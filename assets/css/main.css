@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* body {
+  @apply bg-[#0f0f0f] text-[#ffffff] font-[Poppins] relative;
+  scroll-behavior: smooth;
+  overflow: hidden;
+} */
+
+.social_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1D1D1D;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 0px rgba(46, 46, 46, 0.30) inset, -1px -1px 2px 0px rgba(12, 12, 12, 0.50) inset, -1px 1px 2px 0px rgba(12, 12, 12, 0.20), 1px -1px 2px 0px rgba(12, 12, 12, 0.20), -1px -1px 2px 0px rgba(46, 46, 46, 0.90), 1px 1px 3px 0px rgba(12, 12, 12, 0.90);
+  height: 40px;
+  width: 40px;
+}
+
+.social_btn:hover img{
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;  
+}
