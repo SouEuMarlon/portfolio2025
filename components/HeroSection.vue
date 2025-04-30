@@ -12,26 +12,27 @@ defineProps<{
     class="flex flex-col items-center justify-center relative"
   >
     <div class="container flex flex-col items-center justify-center gap-[44px] mt-[110px] mb-[110px] px-4">
-      <!-- <div class="w-[248px] h-[248px] rounded-full bg-[#fff] flex items-center justify-center">
+      <div class="w-[248px] h-[248px] rounded-full bg-[#fff] border-2 border-[#ffffff] flex items-center justify-center">
         <NuxtImg
-         :src="hero.picture.url"
-         alt="Hero image"
-         class="rounded-full object-cover bg-[#fff] border-2 border-[#ffffff]"
-         width="240"
-         height="240"
-         sizes="(max-width: 768px) 100vw, 240px"
-         loading="lazy"
-         />
-     </div> -->
-     <NuxtImg
+          :src="hero.picture.url"
+          alt="Hero image"
+          class="rounded-full"
+          width="240"
+          height="240"
+          sizes="(max-width: 768px) 100vw, 240px"
+          preload
+          priority
+        />
+     </div>
+     <!-- <NuxtImg
         :src="hero.picture.url"
         alt="Hero image"
-        class="rounded-full object-cover bg-[#fff] border-2 border-[#ffffff]"
+        class="rounded-full bg-[#fff] border-2 border-[#ffffff]"
         width="240"
         height="240"
         sizes="(max-width: 768px) 100vw, 240px"
-        loading="lazy"
-      />
+        preload
+      /> -->
      <h1 class="font-[Poppins] font-semibold sm:text-[2rem] text-2xl max-w-[650px] text-center">{{ hero.heading }}</h1>
      <!-- Botões -->
      <nav class="flex justify-center">
