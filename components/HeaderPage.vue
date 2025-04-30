@@ -1,5 +1,5 @@
 <template>
-  <header class="px-5 pb-5 w-full flex justify-between md:justify-around items-center mx-auto mt-10 border-b-[1px] border-[#ffffff] relative">
+  <header class="px-5 pb-5 w-full flex justify-between md:justify-around items-center mx-auto mt-10 relative">
      <NuxtImg
       src="/assets/img/logo_mnz.svg"
       alt="Marlon Menezes logo"

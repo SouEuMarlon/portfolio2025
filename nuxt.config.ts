@@ -16,10 +16,30 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    // '@nuxtjs/gtm',
   ],
+  // gtm: {
+  //   id: 'G-ZQFX8DDYT9',
+  //   enabled: true,
+  //   debug: true,
+  //   layer: 'dataLayer',
+  //   pageTracking: true,
+  //   scriptDefer: true,
+  //   scriptSrc: 'https://www.googletagmanager.com/gtm.js',
+  //   dataLayer: {
+  //     pageCategory: 'pageCategory',
+  //     pageTitle: 'pageTitle',
+  //     pagePath: 'pagePath',
+  //     pageUrl: 'pageUrl',
+  //     pageReferrer: 'pageReferrer',
+  //     pageLanguage: 'pageLanguage',
+  //     pageType: 'pageType',
+  //     pageId: 'pageId',
+  //     pageName: 'pageName',
+  //     pageAuthor: 'pageAuthor',
+  //   },
   css: ['~/assets/css/main.css'],
-
   app: {
     head: {
       htmlAttrs: {
@@ -30,7 +50,7 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-      ]
+      ],
     }
-  }
+  },
 })

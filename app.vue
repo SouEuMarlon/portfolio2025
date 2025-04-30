@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { onMounted } from 'vue'
-
 import HeroSection from '@/components/HeroSection.vue';
 import { pt_br } from '@nuxt/ui/locale'
 import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
@@ -57,29 +55,26 @@ useHead({
       content: 'Marlon Menezes, Desenvolvedor Front-end, Desenvolvedor, Front-end, HTML, CSS, JavaScript, Vue.js, Nuxt.js, TailwindCSS, Bootstrap, Web, Web Design, Web Development, Web Development, Web Developer, Web Designe, Web Design Responsivo, Acessibilidade Web, Cross-Browser Compatibility, Desenvolvimento Web Front-End, Front-End Web Development, Performance Web, Web Development Best Practices, Teste de Compatibilidade de Navegadores, Flexbox, CSS Grid Layout',
     },
   ],
+  // Google Tag Manager
+  script: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-ZQFX8DDYT9',
+      async: true,
+    },
+    {
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZQFX8DDYT9');
+      `,
+      type: 'text/javascript',
+    },
+  ],
 })
 if (error.value) {
   console.error('Error fetching page data:', error.value);
 }
-
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('fade-in');
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// }, {
-//   threshold: 0.1,
-// });
-
-// onMounted(() => {
-//   const sections = document.querySelectorAll('.reveal');
-//   sections.forEach((section) => {
-//     observer.observe(section);
-//     section.classList.add('fade-in');
-//   });
-// });
 
 </script>
 

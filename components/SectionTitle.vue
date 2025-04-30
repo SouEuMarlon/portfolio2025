@@ -6,8 +6,8 @@ defineProps<{
 </script>
 
 <template>
-  <div>    
-    <h2 class="flex items-center text-3xl font-mono font-['JetBrains Mono'] text-left md:mb-[90px] mb-[65px]">
+  <div class="flex items-center justify-center">    
+    <h2 class="flex items-center text-3xl font-mono font-['JetBrains Mono'] text-center md:mb-[90px] mb-[65px]">
       <NuxtImg
         :src="icon"
         :alt="`${title} logo`"
