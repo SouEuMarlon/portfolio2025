@@ -12,10 +12,18 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui'
   ],
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      ]
+    }
+  }
 })

@@ -2,7 +2,7 @@
 import type { PageProps } from '@/types/PageData'
 
 export async function usePageData() {
-  const { data, pending, error } = await useAsyncData<PageProps>(
+  const { data, error } = await useAsyncData<PageProps>(
     'page-data', // chave de cache (deve ser única por endpoint)
     () =>
       $fetch(`${process.env.COSMIC_API_URL}${process.env.COSMIC_BUCKET_SLUG}/objects/680d7662364aebf5eec897a6`, {
@@ -19,7 +19,7 @@ export async function usePageData() {
     console.error('Erro ao buscar dados da página:', error.value)
   }
 
-  return { pageData: data, pending, error }
+  return { pageData: data, error }
 }
 
 // export const usePageData = () => {

@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <section
     class="flex flex-col items-center justify-center bg-[#0f0f0f] gap-[44px] mt-[110px] mb-[110px] px-4 animate-pulse"

@@ -29,20 +29,20 @@ export interface PageProps {
 }
 
 export interface ImageProps {
-  url: string;
+  url?: string;
   imgix_url: string;
 }
 
 export interface ButtonProps {
   download: boolean;
   icon: string | ImageProps;
-  url: string | null;
-  pdf: null | ImageProps;
+  url?: string;
+  pdf?: null | ImageProps;
 }
 
 export interface ProjectCardProps {
-  link: boolean;
-  url: string | null;
+  link?: boolean;
+  url?: string;
   image: ImageProps;
   tag: string;
   title: string;

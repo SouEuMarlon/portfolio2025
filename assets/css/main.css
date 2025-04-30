@@ -1,12 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* body {
-  @apply bg-[#0f0f0f] text-[#ffffff] font-[Poppins] relative;
-  scroll-behavior: smooth;
-  overflow: hidden;
-} */
-
 .social_btn{
   display: flex;
   justify-content: center;
