@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <script setup lang="ts">
 import type { ProjectCardProps } from '@/types/PageData';
+import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
 
 defineProps<{
   item: ProjectCardProps;
@@ -11,20 +12,15 @@ defineProps<{
 </script>
 
 <template>
-  <section id="projetos" class="">
-    <div class="container mx-auto px-4 py-8 relative">
-      <h2 class="text-3xl font-bold text-center mb-8">
-        <NuxtImg
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-          alt="Vue.js logo"
-          class="inline-block mr-2"
-          width="40"
-          height="40"
-        />
-        Projetos
-      </h2>
+  <section id="projetos" class="reveal">
+    <div class="container mx-auto px-4 pt-8 pb-[64px] md:pb-[174px] relative">
+      <SectionTitle
+        icon="/assets/img/icons/folder.svg"
+        title="Projetos"
+      />
       
-      <ProjectCarousel :cards="project?.card || []" />
+      <ProjectCarousel v-if="project?.card?.length" :cards="project?.card || []" />
+      <ProjectSkeleton v-else />
       
     </div>
   </section>

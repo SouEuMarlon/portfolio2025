@@ -1,5 +1,5 @@
 <template>
-  <header class="max-w-[1160px] px-5 md:px-11 pb-5 w-full flex justify-between items-center mx-auto mt-10 border-b-[1px] border-[#ffffff] relative">
+  <header class="px-5 pb-5 w-full flex justify-between md:justify-around items-center mx-auto mt-10 border-b-[1px] border-[#ffffff] relative">
      <NuxtImg
       src="/assets/img/logo_mnz.svg"
       alt="Marlon Menezes logo"
@@ -13,34 +13,42 @@
     <!-- Menu Desktop -->
     <nav class="hidden md:block">
       <ul class="flex gap-10">
-        <nuxt-link 
-          to="/"
-          class="text-[#4AC652] font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Home
-        </nuxt-link>
-        <nuxt-link 
-          to="#projetos"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Projetos
-        </nuxt-link>
-        <nuxt-link 
-          to="#experiencia"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Experiência
-        </nuxt-link>
-        <nuxt-link 
-          to="#sobre"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Sobre
-        </nuxt-link>
+        <li>
+          <NuxtLink
+            to="/"
+            class="text-[#4AC652] font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Home
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#projetos"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Projetos
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#experiencia"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Experiência
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#sobre"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Sobre
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
 
@@ -55,36 +63,44 @@
     </button>
 
     <!-- Menu Mobile -->
-    <nav v-if="isMenuOpen" class="absolute top-full left-0 w-screen h-screen bg-[#0f0f0f] flex flex-col items-center py-6 md:hidden border-t border-[#ffffff]">
+    <nav v-if="isMenuOpen" class="z-10 absolute top-full left-0 w-screen h-screen bg-[#0f0f0f] flex flex-col items-center py-6 md:hidden border-t border-[#ffffff]">
       <ul class="flex flex-col gap-6 justify-center items-center">
-        <nuxt-link 
-          to="/"
-          class="text-[#4AC652] font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Home
-        </nuxt-link>
-        <nuxt-link 
-          to="#projetos"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Projetos
-        </nuxt-link>
-        <nuxt-link 
-          to="#experiencia"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Experiência
-        </nuxt-link>
-        <nuxt-link 
-          to="#sobre"
-          class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
-          @click="linkSelect"
-        >
-          Sobre
-        </nuxt-link>
+        <li>
+          <NuxtLink
+            to="/"
+            class="text-[#4AC652] font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Home
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#projetos"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Projetos
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#experiencia"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Experiência
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="#sobre"
+            class="text-white font-[Poppins] font-medium text-[1.25rem] hover:text-[#4AC652] transition-colors duration-300" 
+            @click="linkSelect"
+          >
+            Sobre
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
   </header>
@@ -100,10 +116,8 @@ const linkSelect = (event: Event) => {
   const links = document.querySelectorAll('nav ul a')
   links.forEach(link => {
     if(link !== target) {
-      if(link.classList.contains('text-[#4AC652]')) {
-        link.classList.remove('text-[#4AC652]')
-        link.classList.add('text-white')
-      }
+      link.classList.remove('text-[#4AC652]')
+      link.classList.add('text-white')
     }
   })
   target.classList.remove('text-white')

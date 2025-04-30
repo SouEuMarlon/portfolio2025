@@ -19,8 +19,15 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
   css: ['~/assets/css/main.css'],
+
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'pt-BR',
+      },
+      bodyAttrs: {
+        class: 'scroll-smooth',
+      },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
       ]

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+html {
+  scroll-behavior: smooth;
+}
 .social_btn{
   display: flex;
   justify-content: center;

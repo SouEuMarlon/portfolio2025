@@ -16,7 +16,7 @@ export interface PageProps {
         card: ExperienceCardProps[];
       };
       about: {
-        descricao: string;
+        description: string;
         picture: ImageProps;
       };
       contact: {
@@ -54,4 +54,5 @@ export interface ExperienceCardProps {
   firm: string;
   company_time: string;
   description: string;
+  url?: string;
 }

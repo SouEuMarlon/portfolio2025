@@ -12,13 +12,15 @@ defineProps<{
     <NuxtImg
       :src="item.image.url"
       alt="Project image"
-      class="rounded-[8px] mb-4 object-cover w-full h-[300px]"
+      class="rounded-[8px] mb-[34px] object-cover w-full h-[300px]"
       width="678"
       height="300"
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 678px"
     />
 
     <!-- Conteúdo -->
-    <div class="flex flex-col gap-2 flex-1">
+    <div class="flex flex-col gap-[22px] flex-1">
       <h3 class="text-white text-xl font-bold flex items-center gap-1">
         {{ item.title }}
         <!-- <span class="text-green-500 text-sm">●</span> -->

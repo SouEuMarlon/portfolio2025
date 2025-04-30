@@ -1,6 +1,11 @@
 <script setup lang="ts">
+// import { onMounted } from 'vue'
+
 import HeroSection from '@/components/HeroSection.vue';
 import { pt_br } from '@nuxt/ui/locale'
+import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
+import ExperienceSkeleton from '@/components/skeleton/ExperienceSkeleton.vue';
+import HeroSkeleton from '@/components/skeleton/HeroSkeleton.vue';
 
 const { pageData, error } = await usePageData()
 
@@ -56,6 +61,26 @@ useHead({
 if (error.value) {
   console.error('Error fetching page data:', error.value);
 }
+
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('fade-in');
+//       observer.unobserve(entry.target);
+//     }
+//   });
+// }, {
+//   threshold: 0.1,
+// });
+
+// onMounted(() => {
+//   const sections = document.querySelectorAll('.reveal');
+//   sections.forEach((section) => {
+//     observer.observe(section);
+//     section.classList.add('fade-in');
+//   });
+// });
+
 </script>
 
 <template>
@@ -76,25 +101,57 @@ if (error.value) {
       </template>
 
       <template #fallback>
-        <div class="flex justify-center items-center h-96 text-white">Carregando conteúdo...</div>
+        <HeroSkeleton/>
       </template>
     </Suspense>
     <!-- Projetos -->
+    
     <Suspense>
       <template #default>
         <ProjectSection
-          v-if="pageData?.object.metadata.project && pageData.object.metadata.project.card && pageData.object.metadata.project.card.length"
+          v-if="pageData?.object.metadata.project && pageData?.object.metadata.project.card && pageData?.object.metadata.project.card.length"
           :project="pageData.object.metadata.project"
           :item="pageData.object.metadata.project.card[0]"
         />
       </template>
 
       <template #fallback>
-        <div class="flex justify-center items-center h-96 text-white">Carregando conteúdo...</div>
+        <ProjectSkeleton/>
       </template>
     </Suspense>
     <!-- Experiencias -->
+
+    <Suspense>
+      <template #default>
+        <ExperienceSection v-if="pageData?.object.metadata.experience" :experience="pageData.object.metadata.experience" />
+      </template>
+
+      <template #fallback>
+        <ExperienceSkeleton/>
+      </template>
+    </Suspense>
+
     <!-- Sobre -->
+    <Suspense>
+      <template #default>
+        <AboutSection v-if="pageData?.object.metadata.about" :about="pageData.object.metadata.about" />
+      </template>
+
+      <template #fallback>
+        <ProjectSkeleton/>
+      </template>
+    </Suspense>
+
+    <!-- Contato -->
+    <Suspense>
+      <template #default>
+        <ContactSection v-if="pageData?.object.metadata.contact" :contact="pageData.object.metadata.contact" />
+      </template>
+
+      <template #fallback>
+        <ProjectSkeleton/>
+      </template>
+    </Suspense>
      
     <!-- Footer -->    
     <FooterPage />
