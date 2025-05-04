@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PageProps } from '@/types/PageData';
+import SectionTitle from '../atoms/SectionTitle.vue';
 
 defineProps<{
   about?: PageProps['object']['metadata']['about'];
@@ -20,7 +21,7 @@ defineProps<{
           v-if="about?.picture"
           :src="about.picture.url"
           alt="Imagem de perfil - seção sobre mim"
-          class="rounded-full object-cover mb-4"
+          class="rounded-full object-cover w-full max-w-[240px] h-auto"
           width="240"
           height="240"
           sizes="(max-width: 768px) 100vw, 240px"

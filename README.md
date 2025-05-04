@@ -1,75 +1,32 @@
-# Nuxt Minimal Starter
+# Portfólio - Marlon Menezes
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido com foco em performance, acessibilidade e design responsivo. Aqui você encontra uma seleção dos meus projetos, minha trajetória e formas de contato.
 
-## Setup
+🔗 Acesse em: [marlonmenezes.dev](https://marlonmenezes.dev)
 
-Make sure to install dependencies:
+## Tecnologias Utilizadas
 
-```bash
-# npm
-npm install
+- **[Nuxt 3](https://nuxt.com/)** – Framework moderno baseado em Vue.
+- **[NuxtUI](https://ui.nuxt.com/)** – Utilizado para componentes de UI, incluindo o carrossel de projetos.
+- **[Cosmic](https://www.cosmicjs.com/)** – CMS headless para gerenciamento dinâmico de conteúdo.
+- **[TailwindCSS](https://tailwindcss.com/)** – Estilização com classes utilitárias.
 
-# pnpm
-pnpm install
+## Funcionalidades
 
-# yarn
-yarn install
+- Estrutura do projeto utilizando Atomic Design.
+- Design responsivo com scroll suave entre seções.
+- Carrossel com projetos dinâmicos feito utilizando o `NuxtUI` e gerenciados via **CosmicCMS**.
+- Otimização de imagens com `NuxtImg`.
+- Hospedado na **Vercel** com foco em performance e boas práticas SEO.
 
-# bun
-bun install
-```
+## Observação
 
-## Development Server
+Este projeto utiliza chaves de API privadas para consumir dados do CMS **Cosmic**. Por isso, **não é possível executá-lo localmente sem acesso a essas credenciais**.
 
-Start the development server on `http://localhost:3000`:
+Para visualizar o portfólio em funcionamento, acesse:
 
-```bash
-# npm
-npm run dev
+👉 **[https://marlonmenezes.dev](https://marlonmenezes.dev)**
 
-# pnpm
-pnpm dev
+## Licença
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Este projeto está sob a licença MIT.

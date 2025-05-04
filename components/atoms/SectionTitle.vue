@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="flex items-center justify-center">    
-    <h2 class="flex items-center text-3xl font-mono font-['JetBrains Mono'] text-center md:mb-[90px] mb-[65px]">
+    <h2 class="flex items-center text-3xl font-mono font-['JetBrains Mono'] text-center md:mb-[90px] mb-[65px] user-select-none select-none pointer-events-none">
       <NuxtImg
         :src="icon"
         :alt="`${title} logo`"

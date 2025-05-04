@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ProjectCardProps } from '@/types/PageData';
-import ProjectCard from '@/components/ProjectCard.vue';
+import ProjectCard from '~/components/atoms/ProjectCard.vue';
 
 defineProps<{
   cards: ProjectCardProps[];

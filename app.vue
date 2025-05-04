@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import HeroSection from '@/components/HeroSection.vue';
-import { pt_br } from '@nuxt/ui/locale'
-import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
+import AboutSection from '~/components/organisms/AboutSection.vue';
+import AboutSkeleton from './components/skeleton/AboutSkeleton.vue';
+import ContactSection from '~/components/organisms/ContactSection.vue';
+import ContactSkeleton from './components/skeleton/ContactSkeleton.vue';
+import ExperienceSection from '~/components/organisms/ExperienceSection.vue';
 import ExperienceSkeleton from '@/components/skeleton/ExperienceSkeleton.vue';
+import FooterPage from '~/components/molecules/FooterPage.vue';
+import HeaderPage from '~/components/molecules/HeaderPage.vue';
+import HeroSection from '~/components/organisms/HeroSection.vue';
 import HeroSkeleton from '@/components/skeleton/HeroSkeleton.vue';
+import ProjectSection from '~/components/organisms/ProjectSection.vue';
+import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
+import { pt_br } from '@nuxt/ui/locale'
 
 const { pageData, error } = await usePageData()
-
 
 useSeoMeta({
   title: 'Marlon Menezes | Desenvolvedor Front-End',
@@ -83,8 +90,8 @@ if (error.value) {
   <div class="bg-[#0f0f0f] min-h-screen min-w-screen relative z-10">
     <!-- Background Balls -->
     <div class="absolute bg-white opacity-[2%] blur-2xl z-0 w-[600px] h-[600px] rounded-full top-0 right-0 md:block hidden"/>
-    <div class="absolute bg-white opacity-[2%] blur-2xl z-0 w-[600px] h-[600px] rounded-full top-44 left-0 md:block hidden"/>
-    <div class="absolute bg-white opacity-[2%] blur-2xl z-0 w-[600px] h-[600px] rounded-full bottom-0 right-0 md:block hidden"/>
+    <div class="absolute bg-white opacity-[2%] blur-2xl z-0 w-[700px] h-[700px] rounded-full top-[800px] left-0 md:block hidden"/>
+    <div class="absolute bg-white opacity-[2%] blur-2xl z-0 w-[700px] h-[700px] rounded-full bottom-56 right-0 md:block hidden"/>
 
     <!-- Header -->
     <HeaderPage />
@@ -133,7 +140,7 @@ if (error.value) {
       </template>
 
       <template #fallback>
-        <ProjectSkeleton/>
+        <AboutSkeleton/>
       </template>
     </Suspense>
 
@@ -144,7 +151,7 @@ if (error.value) {
       </template>
 
       <template #fallback>
-        <ProjectSkeleton/>
+        <ContactSkeleton/>
       </template>
     </Suspense>
      

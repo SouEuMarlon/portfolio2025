@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/no-v-html -->
 <script setup lang="ts">
 import type { ProjectCardProps } from '@/types/PageData';
+import ProjectCarousel from '../molecules/ProjectCarousel.vue';
 import ProjectSkeleton from '@/components/skeleton/ProjectSkeleton.vue';
+import SectionTitle from '../atoms/SectionTitle.vue';
 
 defineProps<{
   item: ProjectCardProps;

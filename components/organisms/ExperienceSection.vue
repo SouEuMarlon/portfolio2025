@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ExperienceCardProps } from '@/types/PageData';
+import SectionTitle from '../atoms/SectionTitle.vue';
 
 defineProps<{
   experience: {

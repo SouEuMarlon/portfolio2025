@@ -3,7 +3,7 @@
      <NuxtImg
       src="/assets/img/logo_mnz.svg"
       alt="Marlon Menezes logo"
-      class="object-cover"
+      class="object-cover user-select-none select-none pointer-events-none"
       width="172"
       height="48"
       sizes="(max-width: 768px) 100vw, 172px"
