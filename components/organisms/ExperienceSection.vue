@@ -7,6 +7,20 @@ defineProps<{
     card: ExperienceCardProps[];
   };
 }>();
+
+const geFirmDataLayer = (item: ExperienceCardProps) => {
+  return {
+    event: 'experience_card_click',
+    eventCategory: 'Experience',
+    eventAction: 'click',
+    eventLabel: item.firm,
+  };
+};
+const handleCardClick = (item: ExperienceCardProps) => {
+  const dataLayer = geFirmDataLayer(item);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(dataLayer);
+};
 </script>
 
 <template>
@@ -34,6 +48,7 @@ defineProps<{
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-[#4AC652] mb-[14px] text-[34px] font-bold underline underline-offset-4 decoration-1 decoration-white"
+                @click="handleCardClick(item)"
               >
                 {{ item.firm }}
               </NuxtLink>

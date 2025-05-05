@@ -5,6 +5,26 @@ defineProps<{
   contact?: PageProps['object']['metadata']['contact'];
 }>();
 
+type ContactType = PageProps['object']['metadata']['contact'];
+type ContactButton = ContactType extends { buttons: infer B } ? B extends Array<infer U> ? U : never : never;
+
+const getDataLayer = (button: ContactButton) => {
+  const dataLayer = {
+    event: 'contact_button_click',
+    contact_section: {
+      button: {
+        url: button.url,
+        pdf: button.pdf?.url,
+      },
+    },
+  };
+  return dataLayer;
+};
+const handleClick = (button: ContactButton) => {
+  const dataLayer = getDataLayer(button);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(dataLayer);
+};
 </script>
 
 <template>
@@ -19,7 +39,14 @@ defineProps<{
       <nav class="flex justify-center">
         <ul class="flex gap-[20px]">
           <li v-for="(button, index) in contact?.buttons" :key="index" class="">
-            <NuxtLink :to="button.pdf ? button.pdf.url : button.url ?? ''" class="social_btn" :download="button.pdf?.url ? true : false" target="_blank" rel="noopener noreferrer">
+            <NuxtLink 
+              :to="button.pdf ? button.pdf.url : button.url ?? ''" 
+              class="social_btn" 
+              :download="button.pdf?.url ? true : false" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              @click="handleClick(button)"
+            >
               <NuxtImg
                 :src="typeof button.icon === 'string' ? button.icon : button.icon?.url"
                 alt="Icon"

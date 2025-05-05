@@ -26,7 +26,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterSite: '@soueumarlon',
   twitterTitle: 'Marlon Menezes - Desenvolvedor Front-End',
-  twitterDescription: 'Desenvolvedor Front-End apaixonado por criar experiências web incríveis. Especializado em HTML, CSS e JavaScript, estou pronto para transformar suas ideias em sites responsivos e interativos. Com habilidades em frameworks modernos como Vue.js, Nuxt.js, TypeScript, TailwindCSS e SASS estou preparado para levar sua presença online ao próximo nível.',
+  twitterDescription: 'Desenvolvedor Front-End apaixonado por criar experiências web incríveis. Especializado em HTML, CSS e JavaScript, estou pronto para transformar suas ideias em sites responsivos e interativos. Com habilidades em frameworks modernos como Vue.js, Nuxt.js, ReactJS, NextJS, TypeScript, TailwindCSS e SASS estou preparado para levar sua presença online ao próximo nível.',
   twitterImage: '/assets/img/profile.webp',
   twitterCreator: '@soueumarlon',
   twitterImageAlt: 'Marlon Menezes - Desenvolvedor Front-End',
@@ -59,13 +59,13 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'Marlon Menezes, Desenvolvedor Front-end, Desenvolvedor, Front-end, HTML, CSS, JavaScript, Vue.js, Nuxt.js, TailwindCSS, Bootstrap, Web, Web Design, Web Development, Web Development, Web Developer, Web Designe, Web Design Responsivo, Acessibilidade Web, Cross-Browser Compatibility, Desenvolvimento Web Front-End, Front-End Web Development, Performance Web, Web Development Best Practices, Teste de Compatibilidade de Navegadores, Flexbox, CSS Grid Layout',
+      content: 'Marlon Menezes, Desenvolvedor Front-end, Desenvolvedor, Front-end, HTML, CSS, JavaScript, Vue.js, Nuxt.js, ReactJS, NextJS, TailwindCSS, Bootstrap, Web, Web Design, Web Development, Web Developer, Web Designer, Web Design Responsivo, Acessibilidade Web, Cross-Browser Compatibility, Desenvolvimento Web Front-End, Front-End Web Development, Performance Web, Web Development Best Practices, Teste de Compatibilidade de Navegadores, Flexbox, CSS Grid Layout',
     },
   ],
   // Google Tag Manager
   script: [
     {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-ZQFX8DDYT9',
+      src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`,
       async: true,
     },
     {
@@ -73,7 +73,7 @@ useHead({
         window.dataLayer = window.dataLayer || [];
         function gtag(){window.dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-ZQFX8DDYT9');
+        gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');
       `,
       type: 'text/javascript',
     },

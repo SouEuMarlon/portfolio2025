@@ -21,14 +21,3 @@ export async function usePageData() {
 
   return { pageData: data, error }
 }
-
-// export const usePageData = () => {
-//   const { data, error } = useAsyncData<PageProps>('page-data', async () => {
-//     const url = `${process.env.COSMIC_API_URL}${process.env.COSMIC_BUCKET_SLUG}/objects/680d7662364aebf5eec897a6`
-//     const params = `?pretty=true&read_key=${process.env.COSMIC_READ_KEY}&depth=1&props=slug,title,metadata,type`
-    
-//     return await $fetch<PageProps>(url + params)
-//   })
-
-//   return { data, error }
-// }

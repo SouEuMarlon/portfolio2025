@@ -1,9 +1,41 @@
 <script setup lang="ts">
 import type { ProjectCardProps } from '@/types/PageData';
 
+// Extend Window interface to include dataLayer
+declare global {
+  interface Window {
+    dataLayer: Array<{
+      event: string;
+      project_card?: {
+        title: string;
+        description: string;
+        url: string;
+      };
+    }>;
+  }
+}
+
 defineProps<{
   item: ProjectCardProps;
 }>();
+
+const getDataLayer = (item: ProjectCardProps) => {
+  const dataLayer = {
+    event: 'project_card_click',
+    project_card: {
+      title: item.title,
+      description: item.description,
+      url: item.url || '',
+    },
+  };
+  return dataLayer;
+};
+
+const handleClick = (item: ProjectCardProps) => {
+  const dataLayer = getDataLayer(item);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(dataLayer);
+};
 </script>
 
 <template>
@@ -23,7 +55,6 @@ defineProps<{
     <div class="flex flex-col gap-[22px] flex-1">
       <h3 class="text-white text-xl font-bold flex items-center gap-1">
         {{ item.title }}
-        <!-- <span class="text-green-500 text-sm">●</span> -->
       </h3>
 
       <!-- Tags -->
@@ -43,6 +74,7 @@ defineProps<{
         class="text-green-400 hover:underline"
         target="_blank"
         rel="noopener noreferrer"
+        @click="handleClick(item)"
       >
         Ver projeto
       </NuxtLink>

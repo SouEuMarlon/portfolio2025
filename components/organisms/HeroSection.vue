@@ -4,6 +4,27 @@ import type { PageProps } from '@/types/PageData';
 defineProps<{
   hero?: PageProps['object']['metadata']['hero'];
 }>();
+
+type HeroType = PageProps['object']['metadata']['hero'];
+type HeroButton = HeroType extends { buttons: infer B } ? B extends Array<infer U> ? U : never : never;
+
+const getDataLayer = (button: HeroButton) => {
+  const dataLayer = {
+    event: 'hero_button_click',
+    hero_section: {
+      button: {
+        url: button.url,
+        pdf: button.pdf?.url,
+      },
+    },
+  };
+  return dataLayer;
+};
+const handleClick = (button: HeroButton) => {
+  const dataLayer = getDataLayer(button);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(dataLayer);
+};
 </script>
 
 <template>
@@ -29,16 +50,23 @@ defineProps<{
      <nav class="flex justify-center">
        <ul class="flex gap-[20px]">
          <li v-for="(button, index) in hero.buttons" :key="index" class="">
-           <NuxtLink :to="button.pdf ? button.pdf.url : button.url ?? ''" class="social_btn" :download="button.pdf?.url ? true : false" target="_blank" rel="noopener noreferrer">
-             <NuxtImg
-               :src="typeof button.icon === 'string' ? button.icon : button.icon?.url"
-               alt="Icon"
-               class=""
-               width="24"
-               height="24"
-               loading="lazy"
-             />
-           </NuxtLink>
+          <NuxtLink  
+            :to="button.pdf ? button.pdf.url : button.url ?? ''" 
+            class="social_btn" 
+            :download="button.pdf?.url ? true : false" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            @click="handleClick(button)"
+          >
+            <NuxtImg
+              :src="typeof button.icon === 'string' ? button.icon : button.icon?.url"
+              alt="Icon"
+              class=""
+              width="24"
+              height="24"
+              loading="lazy"
+            />
+          </NuxtLink>
          </li>
        </ul>
      </nav>
