@@ -47,6 +47,20 @@ useHead({
       rel: 'apple-touch-icon',
       href: '/assets/img/favicon.png',
     },
+    {
+      rel: 'canonical',
+      href: 'https://marlonmenezes.dev',
+    },
+    {
+      rel: 'alternate',
+      href: 'https://marlonmenezes.dev',
+      hreflang: 'pt-BR',
+    },
+    {
+      rel: 'alternate',
+      href: 'https://marlonmenezes.dev',
+      hreflang: 'en-US',
+    }
   ],
   bodyAttrs: {
     class: 'bg-[#0f0f0f] text-[#ffffff] font-[Poppins] relative scroll-smooth overflow-x-hidden',
